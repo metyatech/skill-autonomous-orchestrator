@@ -1,0 +1,42 @@
+{
+  "name": "@metyatech/skill-autonomous-orchestrator",
+  "version": "1.0.0",
+  "description": "Autonomous meta-orchestrator skill for agent workspaces",
+  "type": "module",
+  "main": "SKILL.md",
+  "scripts": {
+    "test": "echo 'Error: no test specified' && exit 1",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "keywords": [
+    "agent",
+    "skill",
+    "orchestrator",
+    "autonomous"
+  ],
+  "author": "metyatech",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metyatech/skill-autonomous-orchestrator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/metyatech/skill-autonomous-orchestrator/issues"
+  },
+  "homepage": "https://github.com/metyatech/skill-autonomous-orchestrator#readme",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "SKILL.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "devDependencies": {
+    "eslint": "^10.0.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.5",
+    "prettier": "^3.8.1"
+  }
+}
