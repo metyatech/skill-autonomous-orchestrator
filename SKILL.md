@@ -61,7 +61,7 @@ Scan for work across these dimensions:
 
 ## Dispatch rules
 
-- Always check quota before spawning
+- Before spawning any agent, run `npx -y @metyatech/ai-quota` to check remaining quota. If ai-quota is unavailable or fails, report the limitation and STOP — do not spawn agents without quota visibility.
 - Never assign overlapping files to concurrent agents
 - Conflict avoidance strategies:
   - Per-repository isolation
@@ -72,7 +72,8 @@ Scan for work across these dimensions:
   - Delegated mode declaration
   - Relevant context (file paths, current state)
   - Instruction to complete the full delivery chain when applicable
-- Use model/cost selection guidance from the manager skill's Model Inventory
+- Always specify `model` and `effort` parameters when spawning agents, using the manager skill's Model Inventory as the reference. Classify each task by tier (Free/Light/Standard/Heavy/Large Context), select the model and effort level for that tier, and pass them explicitly in the spawn call. Never rely on agent defaults.
+- When multiple agents can handle a task equally, prefer the one with the most remaining quota. Spread work across agents to maximize total throughput.
 
 ## Monitoring
 
