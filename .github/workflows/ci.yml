@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   verify:
@@ -15,10 +15,11 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: '20'
+          cache: 'npm'
 
       - name: Install dependencies
-        run: npm install -g markdownlint-cli
+        run: npm install
 
-      - name: Run markdownlint
-        run: markdownlint **/*.md --ignore node_modules --ignore AGENTS.md
+      - name: Run verify
+        run: npm run verify

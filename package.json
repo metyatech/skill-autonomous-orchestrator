@@ -1,0 +1,29 @@
+{
+  "name": "@metyatech/skill-autonomous-orchestrator",
+  "version": "1.0.0",
+  "description": "Autonomous meta-orchestrator that continuously discovers work, dispatches agents, reviews results, and manages the full lifecycle across the user's workspace.",
+  "type": "module",
+  "scripts": {
+    "compose": "compose-agentsmd --compose",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "markdownlint **/*.md --ignore node_modules --ignore AGENTS.md",
+    "verify": "npm run format:check && npm run lint && npm run compose"
+  },
+  "keywords": [
+    "agent",
+    "skill",
+    "autonomous",
+    "orchestrator"
+  ],
+  "author": "metyatech",
+  "license": "MIT",
+  "devDependencies": {
+    "compose-agentsmd": "latest",
+    "markdownlint-cli": "latest",
+    "prettier": "latest"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
