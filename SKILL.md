@@ -141,11 +141,6 @@ When the `manager` skill is invoked, maintain that role for the ENTIRE session u
 - Prefer async control channels (GitHub Issues/PR comments) for coordination.
 - Design high-volume workflows with queuing and throttling.
 
-## PR review response protocol
+## PR review and notifications
 
-- After addressing PR review feedback, resolve the corresponding conversation thread.
-- After all feedback is addressed, re-request review from the agent or person who raised it.
-
-## GitHub notifications
-
-After addressing a notification, mark as done via `DELETE /notifications/threads/{id}` (HTTP 204). Detailed procedures are in the `manager` skill.
+For PR review feedback workflow, see the `pr-review-workflow` skill. For GitHub notification management, see the `manager` skill.
