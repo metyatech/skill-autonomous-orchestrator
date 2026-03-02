@@ -148,4 +148,4 @@ When the `manager` skill is invoked, maintain that role for the ENTIRE session u
 
 ## GitHub notifications
 
-After addressing a notification, mark as done via GraphQL `markNotificationsAsDone`. Detailed procedures are in the `manager` skill.
+After addressing a notification, mark as done via `DELETE /notifications/threads/{id}` (HTTP 204). Detailed procedures are in the `manager` skill.
