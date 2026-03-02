@@ -122,3 +122,30 @@ Do NOT escalate for:
 - Standard operations within user-owned repos
 - Work discovery and prioritization
 - Agent monitoring and follow-ups
+
+## Reviewer proxy protocol
+
+When the autonomous-orchestrator is active, it acts as a reviewer proxy for plan approval in user-owned repos.
+
+- Orchestrator invocation is blanket approval for user-owned repos; approve plans via reviewer proxy without asking the human.
+- Reviewer proxy validates against rules, error patterns, and quality standards; proceed if approved, escalate to human if concerns remain. Human may override anytime.
+- Reviewer proxy never covers restricted operations (create/delete repos, force-push, rewrite published history) — these always require human approval.
+- Orchestrator may apply safe rule changes when reviewer proxy confirms policy consistency; escalate when ambiguous.
+
+## Manager role persistence
+
+When the `manager` skill is invoked, maintain that role for the ENTIRE session unless the user explicitly stops it.
+
+## Async control channels
+
+- Prefer async control channels (GitHub Issues/PR comments) for coordination.
+- Design high-volume workflows with queuing and throttling.
+
+## PR review response protocol
+
+- After addressing PR review feedback, resolve the corresponding conversation thread.
+- After all feedback is addressed, re-request review from the agent or person who raised it.
+
+## GitHub notifications
+
+After addressing a notification, mark as done via GraphQL `markNotificationsAsDone`. Detailed procedures are in the `manager` skill.
